@@ -1,6 +1,7 @@
 from django.contrib.auth import forms as admin_forms
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django import forms as djagno_forms
 
 User = get_user_model()
 
@@ -17,3 +18,11 @@ class UserCreationForm(admin_forms.UserCreationForm):
         error_messages = {
             "username": {"unique": _("This username has already been taken.")}
         }
+
+
+class SignUpForm(djagno_forms.ModelForm):
+    class Meta:
+        model = User
+
+        fields = ['email', 'name', 'username', 'password']
+
