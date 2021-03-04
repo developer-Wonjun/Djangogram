@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/users/main.css' %}">
+    <title>{% block title %}{% endblock %}자기야 또 왜 gram</title>
+</head>
+<body>
+    <h1>자기야 또 왜 gram</h1>
+    <div>
+        {% block content %} {% endblock %}
+
+    </div>
+
+    {% include "users/footer.html" %}
+
+    
+</body>
+</html>

@@ -1,6 +1,11 @@
+{% extends "users/base.html" %}
+
+{% block title %}
+sign up
+{% endblock%}
 <h1>회원가입 페이지 입니다.</h1>
 
-
+{% block content %}
 <form action="{% url 'users:signup' %}" method='post'>
     {% csrf_token %}
     {% for field in form %}
@@ -14,3 +19,5 @@
 </form>
 
 <a href="{% url 'users:main' %}">Login</a>
+
+{% endblock %}

@@ -36,8 +36,8 @@ def signup(request):
         if form.is_valid():
             form.save()
 
-            form.cleaned_data['username']
-            form.cleaned_data['password']
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
 
             user = authenticate(request, username=username, password=password)
 
